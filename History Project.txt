@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="This is Description">
+    <meta name="keywords" content="Html Tutorials,Html with Harry, Web Development">
+    <title>Cultural Heritage sites to visit in India | CultureIndia.com</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .navbar {
+            background-color: rgb(236, 77, 77);
+            border-radius: 30px;
+            /* position: fixed; */
+        }
+        
+        .navbar ul {
+            overflow: auto;
+            margin: -8px;
+            padding: 7px;
+        }
+        
+        .navbar li {
+            float: left;
+            list-style: none;
+            margin: 14px 2px;
+            border-right: 1px solid rgba(0, 0, 0, 0, 2)
+        }
+        
+        .navbar li a {
+            padding: 12px 20px;
+            text-decoration: none;
+            color: white;
+            font-size: 20px;
+        }
+        
+        .navbar li a:hover {
+            padding: 12px 20px;
+            text-decoration: none;
+            background-color: black;
+            border-radius: 20px;
+        }
+        
+        .search {
+            float: right;
+            color: rgb(128, 243, 12);
+            padding: 12px 75px;
+        }
+        
+        .navbar input {
+            border: 2px solid rgb(230, 22, 22);
+            border-radius: 30px;
+            padding: 3px 20px;
+        }
+        /* Home Section */
+        
+        #home {
+            display: flex;
+            flex-direction: column;
+            padding: 3px 200px;
+            height: 500px;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        #home::before {
+            content: "";
+            position: absolute;
+            background: url('../img/bg1.jpg') no-repeat center center/cover;
+            height: 100%;
+            width: 100%;
+            z-index: -1;
+            opacity: 0.89;
+        }
+        
+        #home h1 {
+            color: rgb(255, 255, 255);
+            text-align: center;
+        }
+        
+        #home p {
+            color: rgb(241, 242, 247);
+            text-align: center;
+            font-size: 1rem;
+        }
+        
+        places section */ #places {
+            margin: 34px;
+            display: flex;
+            overflow-x: auto;
+        }
+        
+        #places .box {
+            border: 2px solid blue;
+            border-radius: 12px;
+            padding: 0px;
+            margin: 3px 12px;
+            background-color: rgb(182, 180, 180);
+        }
+        
+        #places .box img {
+            height: 100px;
+            display: block;
+            margin: auto;
+        }
+        /* utility classes */
+        
+        .h-primary {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: 2.8rem;
+        }
+        
+        .h-secondary {
+            font-size: 1.8rem;
+            padding: 12px;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+        
+        .center {
+            text-align: center;
+        }
+        
+        .footer {
+            background: black;
+            color: white;
+            height: 470px;
+            position: relative;
+        }
+        
+        .footer-content {
+            /* border: 1px solid rgb(250, 5, 5); */
+            height: 350px;
+            display: flex;
+            font-size: 18px;
+        }
+        
+        .footer .footer-content h1,
+        .footer .footer-content h2 {
+            color: white;
+        }
+        
+        .footer .footer-content .about h1 span {
+            color: #05f7ff;
+        }
+        
+        .footer-section {
+            flex: 1;
+            /* border: 1px solid white; */
+            padding: 25px;
+        }
+        
+        .footer-bottom {
+            background: rgb(58, 57, 57);
+            color: #686868;
+            height: 40px;
+            width: 100%;
+            text-align: center;
+            position: absolute;
+            bottom: 0px;
+            left: 0px;
+            padding-top: 20px;
+        }
+        
+        .footer .footer-content .about .socials a {
+            border: 1px solid grey;
+            width: 45px;
+            height: 41px;
+            padding-top: 5px;
+            margin-right: 5px;
+            text-align: center;
+            display: inline-block;
+            font-size: 1.3em;
+            border-radius: 5px;
+        }
+        
+        .footer .footer-content .links ul a {
+            display: block;
+            color: beige;
+            margin-bottom: 10px;
+            transition: all .3s;
+        }
+        
+        .footer .footer-content .links ul a:hover {
+            color: beige;
+            margin-left: 15px;
+            transition: all .3s;
+        }
+        
+        .footer .footer-content .about .contact span {
+            display: block;
+            margin-bottom: 8px;
+        }
+        
+        .footer .footer-content .contact-form .contact-input {
+            background: rgb(37, 37, 37);
+            color: #bebdbd;
+            margin-bottom: 5px;
+            line-height: 2.5rem;
+            width: 270px;
+            height: 44px;
+            padding: .9rem 1.4rem;
+            border: none;
+        }
+        
+        .footer .footer-content .contact-form .message-input {
+            background: rgb(37, 37, 37);
+            color: #bebdbd;
+            margin-bottom: 5px;
+            line-height: 2.5rem;
+            width: 310px;
+            height: 70px;
+            padding: .9rem 1.4rem;
+            border: none;
+        }
+        
+        .footer .footer-content .contact-form .btn-big {
+            background: rgb(79, 143, 238);
+            padding: .7rem 1.1rem;
+            line-height: 1.0rem;
+            float: right;
+        }
+        
+        .content .places-content {
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-size: large;
+        }
+        
+        p .para {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: larger;
+            color: rgb(255, 17, 0);
+        }
+        
+        h2 {
+            color: rgb(0, 0, 255);
+        }
+        
+        p {
+            color: rgb(0, 110, 255);
+            font-size: larger;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+        
+        li {
+            color: rgb(120, 118, 243);
+            font-size: larger;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+        
+        h4 {
+            color: rgb(17, 0, 255);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-style: Italic;
+        }
+        
+        h5 {
+            color: rgb(10, 7, 4);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-style: Italic;
+            font-size: 1rem;
+        }
+        
+        .places-content .content img {
+            border: 2pxx solid blue;
+        }
+    </style>
+
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <ul>
+                <li><a href="History Project.html"><i class="fa fa-home"></i>&nbsp; Home</a></li>
+                <li><a href="About_us.html"><i class="fa fa-file-text-o"></i>&nbsp; About Us</a></li>
+                <li><a href="Services.html"><i class="fa fa-cogs"></i>&nbsp; Services</a></li>
+                <li><a href="travel_guide.html"><i class="fa fa-cogs"></i>&nbsp;Travel Guide</a></li>
+                <li><a href="Contact_Us.html"><i class="fa fa-phone"></i>&nbsp; Contact Us</a></li>
+                <div class="search">
+                    <center><input type="text" name="search" id="search" placeholder="Search This Website"><i class="fa fa-search"></i>&nbsp;</center>
+                </div>
+            </ul>
+        </nav>
+
+        <section id="home">
+
+            <h1 class="h-primary">Top 10 Cultural Heritage Places in India</h1>
+            <p>The culture of India or Indian culture, sometimes equated to Indian civilization, is the heritage of social norms, ethical values, traditional customs, belief systems, political systems, artifacts and technologies that originated in or are
+                associated with the Indian subcontinent.</p>
+        </section>
+
+        <section class="places-container">
+            <!-- center -->
+            <h1 class="h-primary center">Which cultural heritage place do you want to visit to?</h1>
+            <div id="places">
+                <div class="box">
+                    <img src="img/Golden-Temple-Amritsar.jpg" alt="">
+                    <h2 class="h-secondary center">Amritsar</h2>
+                </div>
+                <div class="box">
+                    <img src="img/Mosques-in-India-4.jpg" alt="">
+                    <h2 class="h-secondary center">Lucknow</h2>
+                </div>
+                <div class="box">
+                    <img src="img/Purana-Qila-shutterstock_514508050.jpg" alt="">
+                    <h2 class="h-secondary center">Delhi </h2>
+                </div>
+                <div class="box">
+                    <img src="img/Chittorgarh-Fort..jpg" alt="">
+                    <h2 class="h-secondary center"> Rajasthan</h2>
+                </div>
+                <div class="box">
+                    <img src="img/Folk-artist-Rann-Utsav.jpg" alt="">
+                    <h2 class="h-secondary center">Rann of Kutch</h2>
+                </div>
+                <div class="box">
+                    <img src="img/khajuraho-temple-2.jpg" alt="">
+                    <h2 class="h-secondary center">Khajuraho</h2>
+                </div>
+                <div class="box">
+                    <img src="img/Victoria-Memorial-Kolkata.jpg" alt="">
+                    <h2 class="h-secondary center">Kolkata</h2>
+                </div>
+                <div class="box">
+                    <img src="img/Charminar-in-Hyderabad.jpg" alt="">
+                    <h2 class="h-secondary center">Hyderabad</h2>
+                </div>
+                <div class="box">
+                    <img src="img/Hampi.jpg" alt="">
+                    <h2 class="h-secondary center">Hampi</h2>
+                </div>
+                <div class="box">
+                    <img src="img/Bom-Jesus.jpg" alt="">
+                    <h2 class="h-secondary center">Goa</h2>
+                </div>
+            </div>
+            <div>
+                <p class="para">
+                    <B><I></I>India is the birthplace and the cradle of some of the world’s major cultures and
+                        religions. The unparalleled cultural ebullience of the various world heritage sites in India
+                        allure travelers from across the globe. The myriad shades
+                        of traditions and rituals have been contributing to the Indian culture. And the numerous
+                        places
+                        of Indian cultural heritage speak volumes about the same. <br> <br> Cultural tourism in
+                        India
+                        takes the travelers beyond exotic beaches
+                        & beach resorts, picturesque hills, and utmost lavishness. It takes you through the famous
+                        historical places in India, the various art forms, and the authentic food trails. </B>
+                    </I>
+                </p>
+            </div>
+            <!-- <center> -->
+            <div class="content">
+                <center>
+                    <h2>Amritsar: The Golden city of Punjab:</h2>
+                    <a name="#act">
+                    </a>
+                    <img src="img/Golden-Temple-Amritsar.jpg" alt="Image of Amritsar " height="400px">
+                    <p class="places-content">
+                        The heart of the Sikh culture in India, Amritsar was established in 1574 as a holy town by Guru Ram Das. The 4th Sikh Guru – Guru Ram Das – excavated a tank and turned it into the lake (sarovar) of holy water or Amrit. In addition to its myriad temples,
+                        gurudwaras, and museums, there are katras (narrow lanes) that are basically self-contained residential units that provided special protection during wars.
+
+                    </p>
+                </center>
+
+                <h4>What’s Special:</h4>
+                <p>Sri Harmandir Sahib (Golden Temple), Jallianwala Bagh, and Wagah Border are the most popular places to visit in Amritsar.</p>
+
+                <h4>For A Walk Through The City’s Culture: </h4>
+                <p>In addition to the aforementioned places to visit in Amritsar, there are many other temples, gurudwaras, museums, and more that make Amritsar one of the best places to experience Indian culture and heritage. Durgiana Temple, Akal Takht,
+                    and Mata Lal Devi Temple are the most prominent religious places in Amritsar. A walk through the Maharaja Ranjit Singh Museum provides an enriching experience of the origin of the Sikh empire.
+                </p>
+
+                <h4>Food In Amritsar:</h4>
+                <p>In addition to its flamboyant Punjabi culture depicted in the grandeur of the tourist attractions in Amritsar, there’s the authentic cuisine food that can’t be missed. The most popular places in Amritsar to enjoy food are:</p>
+                <ul>
+                    <li>
+                        <B>Bharawan Da Dhaba: </B> It is known for Amritsari Kulcha, Lassi, and Chhole Bhature.</li>
+                    <li>
+                        <B> Surjit Chicken House:</B> It is most famous for Tandoori Chicken and Amritsari Fish. </li>
+                    <li>
+                        <B> Golden Temple Complex:</B> One should not miss the Guru ka Langar.</li>
+                </ul>
+                <h4>How To Reach</h4>
+                <h5>By air:</h5>
+                <p>Sri Guru Ram Dass Jee International Airport (ATQ) is at a distance of 11 km from the city-centre. Daily flights ply between Amritsar and most Indian as well as some international cities such as Toronto, Dubai, London, Singapore, and Tashkent.
+                </p>
+                <h5>By rail:</h5>
+                <p>Amritsar Railway Station is well connected to other Indian cities.</p>
+                <h5>By road:</h5>
+                <p>Buses are available from other cities in Punjab as well as from Delhi, Shimla, and Jammu.
+                </p>
+                <center>
+                    <h2>Lucknow: The City Of The Nawabs:</h2>
+                    <a name="#act">
+                    </a>
+                    <img src="img/Mosques-in-India-4.jpg" alt="Image of Lucknow " height="400px">
+                    <p class="places-content">
+                        Lucknow, the capital of Uttar Pradesh, is ranked high among the places to experience Indian culture and heritage. The city boasts of a distinctive culture due to the amalgamation of Hindu & Muslim cultures. Furthermore, many literary & performing arts
+                        flourished here. The heritage city of India is also famous for its craftsmanship and painting styles.
+                    </p>
+                </center>
+                <h4>What’s Special:</h4>
+                <p>Bara Imambara, Chhota Imambara, Rumi Darwaza, Dilkusha Kothi, and British Residency Complex are the most popular tourist places in Lucknow..</p>
+
+                <h4>For A Walk Through The City’s Culture: </h4>
+                <p> The city’s rich architecture has been influenced by the Delhi Sultanate, the Mughals, the Nawabs of Awadh, and even the British. In addition to the places to visit in Lucknow mentioned earlier, there are Chhattar Manzil, Husainabad Clock
+                    Tower, Sikander Bagh, Satkhanda, Begum Hazrat Mahal Park, Shahi Baoli, Jama Masjid, and Butler Palace. Tourists can also take a walk through history at the State Museum and the Picture Gallery.
+                </p>
+
+                <h4>Food In Lucknow:</h4>
+                <p>The local Awadhi cuisine is totally drool-worthy. Some of the popular dishes of the Awadhi cuisine are:
+                </p>
+                <ul>
+                    <li>
+                        <B>Indian breads: </B> Ulte tawe ka parantha, Varki, and Sheermal</li>
+                    <li>
+                        <B> Non-veg dishes:</B> Galawati Kabab, Boti Kabab, Tunday Kabab, Nihari Gosht, Rogan Josh, and Lucknowi Biryani. </li>
+                    <li>
+                        <B>Veg dishes:</B> Tokri Chaat, Malai Ki Gilori, Lucknowi paan, Kulfi Falooda, and Navratan Korma.
+                    </li>
+                </ul>
+
+
+
+                <h4>How To Reach</h4>
+                <h5>By air:</h5>
+                <p> Daily flights of major domestic airlines from Delhi, Mumbai, Kolkata, Jaipur, Chandigarh, Bangalore, Patna, and other important cities serve Lucknow. The city airport is located 14 km from the city center.
+                </p>
+                <h5>By rail:</h5>
+                <p>Lucknow Railway Station at Charbagh is well-connected with other major Indian cities by a strong railway network. Alamnagar, Gomti Nagar, and Aishbagh junction are other railway stations serving the city.</p>
+                <h5>By road:</h5>
+                <p>Buses are available from Varanasi, Allahabad, Kanpur, Agra, Jhansi, Delhi, and other nearby cities.
+                </p>
+                <center>
+                    <h2>Delhi: A Potpourri Of Different Cultures:</h2>
+                    <a name="#act">
+                    </a>
+                    <img src="img/Purana-Qila-shutterstock_514508050.jpg" alt="Image of Delhi " height="400px">
+                    <p class="places-content">
+                        Delhi – the cosmopolitan & capital city of India – has been strongly influenced by several religions and dynasties. Rajputs, Sultans, Khiljis, Mughals, and even British ruled on these lands and left behind a part of their selves in the form of monuments,
+                        paintings, artifacts, literary works, customs, festivals, and more. It is, perhaps, the major reason that most of the famous festivals of India are celebrated here with equal enthusiasm and celebrities
+                    </p>
+                </center>
+                <h4>What’s Special:</h4>
+                <p> India Gate, Red Fort, Old Fort, and Qutab Minar are the most prominent tourist places in Delhi.</p>
+
+                <h4>For A Walk Through The City’s Culture: </h4>
+                <p> Take a sightseeing tour of the historical places in Delhi if you wish to experience the city’s rich cultural heritage. But that’s not it. Museums, art galleries, cultural centers, theatres, and various food joints together make Delhi one
+                    of the best places of Indian cultural heritage
+                </p>
+                <h4>How To Reach</h4>
+                <h5>By air:</h5>
+                <p> Indira Gandhi International Airport in Delhi is well-connected with domestic and international cities
+                </p>
+                <h5>By rail:</h5>
+                <p>Regular trains ply between Delhi and other major cities of the country. Old Delhi Railway Station, Nizamuddin Railway Station, Sarai Rohilla, Anand Vihar, and New Delhi Railway Station are some of the major railheads in Delhi..</p>
+                <h5>By road:</h5>
+                <p>Delhi is connected to various cities of North India by road. Local, deluxe, and AC volvo buses ply between Delhi and other cities of North India. Other Nearby Places: Kurukshetra and Panipat are other cultural towns in India that are located
+                    nearby. The duo form an integral form of India’s rich heritage and hold religious & historical significance.
+                </p>
+                <center>
+                    <h2>Rajasthan: The Land Of Rajputs:</h2>
+
+                    <img src="img/Chittorgarh-Fort..jpg" alt="Image of Rajasthan " height="400px">
+                    <p class="places-content">
+                        The Rajputana grandeur of the various places to visit in Rajasthan beats the best of the best when it comes to history and heritage. The nearly 5000 year old culture is exemplary of a perfect blend of tradition & history with the present contemporary
+                        lifestyle. Some of the top cultural cities in India can be found in this state itself. <br> <br> From dresses of vibrant colors to folk music & dances and from local cuisine to festivals of Rajasthan, there’s
+                        a lot in the state that makes it one of the best places in India to experience culture and heritage.
+                    </p>
+                </center>
+                <h4>What’s Special:</h4>
+                <p> Tourists can explore the various historical places in Rajasthan or attend one of the cultural events & fairs held in the various cities & towns of the state that paint a colorful palette of its cultural heritage.
+                </p>
+
+                <h4>For A Walk Through The City’s Culture: </h4>
+                <p> The city’s rich architecture has been influenced by the Delhi Sultanate, the Mughals, the Nawabs of Awadh, and even the British. In addition to the places to visit in Lucknow mentioned earlier, there are Chhattar Manzil, Husainabad Clock
+                    Tower, Sikander Bagh, Satkhanda, Begum Hazrat Mahal Park, Shahi Baoli, Jama Masjid, and Butler Palace. Tourists can also take a walk through history at the State Museum and the Picture Gallery.
+                </p>
+
+
+                <center>
+                    <h2>Rann of Kutch: The Land Of The White Desert:</h2>
+                    <a name="#act">
+                    </a>
+                    <img src="img/Folk-artist-Rann-Utsav.jpg" alt="Image of Kutch " height="400px">
+                    <p class="places-content">
+                        Kutch holds a reputation among local and international tourists for its famous Rann Utsav. The carnival that lasts for about 100 days is an integral part of the cultural tourism in India. But that is not all that makes the region find a spot in the list
+                        of places of Indian cultural heritage.
+                    </p>
+                </center>
+                <h4>What’s Special:</h4>
+                <p> Kutch Utsav held every year during November to February is the highlight of the Rann of Kutch.</p>
+
+                <h4>For A Walk Through The City’s Culture: </h4>
+                <p> Tourists can explore Rann of Kutch, Aina Mahal or Madan Singhji Museum, Kutch Museum, Dholavira excavation site, Siyot Caves, and other places to visit in Kutch. The region also has Bhadreshwar Jain Temple that is of great religious significance
+                </p>
+                <h4>How To Reach</h4>
+                <p>
+                    Bhuj, located 86 km from the tent city of Dhordo in Kutch, has an airport and a railhead. However, the Kutch Express from Mumbai goes till Gandhi Dham that is 135 km from Dhordo. All the major cities of Gujarat are well commuted by state-run transport
+                    buses.
+                </p>
+                <center>
+                    <h2>Khajuraho: The Land Of The Kamasutra Temples:</h2>
+                    <a name="#act">
+                    </a>
+                    <img src="img/khajuraho-temple-2.jpg" alt="Image of khajuraho" height="400px">
+                    <p class="places-content">
+                        Countless sculptures of cult icons, demi-gods, & Apsaras that depict love, grace, beauty, delicacy, sensuality, & eroticism can be seen the temples of Khajuraho. The perfect amalgamation of Hinduism and Jainism in its culture and heritage makes the city
+                        one of the must-visit tourist places in Madhya Pradesh.
+                    </p>
+                </center>
+
+                <h4>What’s Special:</h4>
+                <p> The temples of Kandariya Mahadev, Parsvanath, Visvanath, Devi Jagadamba, Vamana, Duladeo, Chitragupta, & Bijamandala have put the city in the list of the seven wonders of India.</p>
+
+                <h4>For A Walk Through The City’s Culture: </h4>
+                <p>Tourists must attend the Sound & Light Show that portrays the tale of the Chandela dynasty and visit Ajaigarh Fort & Archeological Museum.
+                </p>
+
+                <h4>How To Reach</h4>
+                <h5>By air:</h5>
+                <p>The domestic airport at Khajuraho is well-connected to most of the Indian cities such as New Delhi, Mumbai, Varanasi, Allahabad, and Bhopal.
+                </p>
+                <h5>By rail:</h5>
+                <p> Khajuraho railway station is connected to only a few places including New Delhi. But Mahoba Junction, located 75 km away, is well-connected to some of the major Indian cities.</p>
+                <h5>By road:</h5>
+                <p> Khajuraho is well-connected to neighboring cities like Jhansi with a good bus network.
+                </p>
+                <center>
+                    <h2>7. Kolkata: The City Of Joy:</h2>
+
+                    <img src="img/Victoria-Memorial-Kolkata.jpg" alt="Image of Kolkata" height="400px">
+                    <p class="places-content">
+                        The region that passed on from the hands of the Nawabs of Bengal to those of the earliest British representatives of the East India Company is often tagged as the Cultural Capital of India. This heritage city of India is also known to be the birthplace
+                        of urban Indian culture & literary thought and a majority of India’s notable literary figures stemmed from here. This place should definitely be on your bucket list if you want to experience the roots of modern Indian sub-culture.
+                    </p>
+                </center>
+
+                <h4>What’s Special:</h4>
+                <p>Victoria Memorial, Howrah Bridge, Indian Museum, and St. Paul’s Cathedral are the most prominent tourist places in Kolkata.</p>
+
+                <h4>For A Walk Through The City’s Culture: </h4>
+                <p>Writers’ Building, Marble Palace, National Library, Fort William, and Shaheed Minar are some of the other places to visit in Kolkata that speak volumes about the city’s rich culture & heritage. Dakshineshwar Kali Temple, Birla Mandir,
+                    and Belur Mutt are some of the other religious places in Kolkata. The city is also the home to Academy of Fine Arts – the oldest art gallery of India – that is one of the finest collections of paintings in the country.
+                </p>
+
+                <h4>Food In Kolkata:</h4>
+                <p> There’s something about the local food that Kolkatans can’t stop boasting about. Here are the must-try dishes in Kolkata:
+                </p>
+                <ul>
+                    <li>
+                        <B>Best dishes: </B> Mughlai parantha, aakher josh, kosha mangsho, chicken kabiraji, macher jhol, Kolkata biryani, hinger kochuri, Shukto, aloo posto, mochha, and chholar daal are some of the best Bengali dishes..</li>
+                    <li>
+                        <B>Sweets:</B> Sondesh, roshogolla, and pitha are some of the most popular sweets in Kolkata..
+                    </li>
+                    <li>
+                        <B>Street food:</B> Phuchka, churmur, ghugni chaat, jhalmuri, keemar doi bora, chhanar jilipi, and telebhaja are some of the best dishes of the street food in Kolkata.</li>
+                </ul>
+                <h4>How To Reach</h4>
+                <h5>By air:</h5>
+                <p>Netaji Subhash Chandra Bose International Airport situated at Dumdum, 17 km from the heart of the city, is well-connected to several Indian and international cities
+                </p>
+                <h5>By rail:</h5>
+                <p> An extensive railway network connects Kolkata to other Indian cities like Delhi and Mumbai.</p>
+                <h5>By road:</h5>
+                <p>Calcutta State Transport Corporation (CSTC), Calcutta Tramways Company (CTC), and West Bengal Surface Transport Corporation (WBSTC) regular bus services within the city and from other cities of West Bengal. The Esplanade Terminus is the
+                    main bus terminus in Kolkata.
+                </p>
+                <center>
+                    <h2> Hyderabad: The City Of Nizams:</h2>
+                    <a name="#act">
+                    </a>
+                    <img src="img/Charminar-in-Hyderabad.jpg" alt="Image of hyderabad " height="400px">
+                    <p class="places-content">
+                        Established in 1591 by the Indo-Persian Sultan Muhammad Quli Qutab Shah, Hyderabad was ruled by Sultans, Mughals, & Nizams before becoming a Princely State under the British Raj. The region was previously under the ancient kingdoms of Chalukyas and Kakatiyas.
+                        The city’s architecture is richly influenced by all these cultures. And then there are literary arts, craftsmanship, handicrafts, paintings, dances, theatres, and dishes that make the city one of the must-visit places to experience
+                        Indian culture and heritage.
+                    </p>
+                </center>
+                <h4>What’s Special:</h4>
+                <p>Golconda Fort, Char Minar, Hussain Sagar, and Salar Jung Museum are the most popular tourist places in Hyderabad.</p>
+
+                <h4>For A Walk Through The City’s Culture: </h4>
+                <p>Religious places in Hyderabad include Birla Mandir, Makkah Masjid, Chilkur Balaji Temple, and Keesaragutta Temple. Shilparamam art-and-craft-village, Telangana State Archaeology Museum, and Nizam Museum present paintings & other artifacts
+                    that highlight the city’s rich heritage. Tourists can also take a walk through other Hyderabad attractions, such as Chowmahalla Palace, Qutab Shahi tombs, Maqbara Shams al-Umara, Taramati Baradari, King Kothi Palace, and Bagh-e-Aam.
+                </p>
+
+                <h4>Food In Hyderabad:</h4>
+                <p> The city is also a heaven for those who wish to savor the most mouth watering non-vegetarian Indian recipes. And that doesn’t mean that there aren’t any vegetarian dishes:</p>
+                <ul>
+                    <li>
+                        <B>Vegetarian dishes: </B> Mirchi ka salan, khatti dal, Qabooli pulao, Hyderabadi khichdi, and sheer khurma are some of the vegetarian dishes of Hyderabadi cuisine..</li>
+                    <li>
+                        <B> Non-vegetarian dishes:</B> Hyderabadi biryani, dum pukht, Hyderabadi marag, maghaz masala, and gosht pasinde are the most popular Hyderabadi non-vegetarian dishes. </li>
+                    <li>
+                        <B> Street food:</B>Keema samosa and lukhmis are some of the dishes of Hyderabad street food that you can enjoy. How To Reach.</li>
+                </ul>
+                <h4>How To Reach</h4>
+                <h5>By air:</h5>
+                <p>Rajiv Gandhi International airport located in Shamshabad, 20 km away from the city, is well-connected to several cities in India and other parts of the world.
+                </p>
+                <h5>By rail:</h5>
+                <p>Hyderabad Railway Station, Secunderabad Railway Station, and Kachiguda Railway Station are major railheads in the city that connect it major Indian cities like Bangalore, Chennai, New Delhi, Mumbai, and Pune.Amritsar Railway Station is
+                    well connected to other Indian cities.</p>
+                <h5>By road:</h5>
+                <p>The city’s bus terminus is well-connected to its neighbouring towns like Aurangabad, Bangalore, Mumbai, Kolkata, Chennai, Tirupati and Panaji.
+                </p>
+                <center>
+                    <h2>Hampi: Ancient Kingdom Of Vijaynagar :</h2>
+
+                    <img src="img/Hampi.jpg" alt="Image of Amritsar " height="400px">
+                    <p class="places-content">
+                        Hampi is a beautiful world heritage site which is situated at the Northern part of Karnataka. This place is famous for holding the ruins of the ancient kingdom of Vijaynagar. These ruins of Hampi are considered to be a vast collection of heritage sites
+                        which reflects the Dravidian style of art and architecture. The most famous place in this city is the Virupaksha temple which holds much importance among the Hindus. Alongside that there are many other monuments which are collectively
+                        known as the ‘Group of monuments at Hampi’.
+                    </p>
+                </center>
+
+                <h4>What’s Special:</h4>
+                <p>Krishna Temple complex, Narsimha, Ganesh, Hemakuta group of temples, Vitthala temple complex, Pattabhirama temple complex, Lotus Mahal complex.</p>
+
+                <h4>Food In Hampi:</h4>
+                <p>This place is famous for South Indian delicacies like Idli and Dosa and alongside Thali meals. In addition to this one can also try other dishes like Cauliflower Manchurian, Fried rice and Vegetable curry. The best place to try street
+                    food in Hampi is at the Hampi Bazaar.</p>
+                <h4>How To Reach</h4>
+                <h5>By air:</h5>
+                <p>The nearest airport connecting to Hampi is the Belgaum airport which is 270 kms away. Alongside that the Bangalore airport is also close which is located at a distance of 300 kms from Hampi. Direct flights can be available from major cities
+                    like Delhi and Mumbai.
+                </p>
+                <h5>By rail:</h5>
+                <p>There is no direct railway station connecting to Hampi. The nearest railhead is Hospet which is located around 13 kms from Hampi. From there one can take a taxi or bus to reach Hampi..</p>
+                <h5>By road:</h5>
+                <p>Hampi is well connected to Bangalore and other cities of Karnataka via the roadway. The KSRTC buses run on a frequent basis from Hospet.
+                </p>
+                <center>
+                    <h2> Goa: Land Of Beaches And Churches:</h2>
+
+                    <img src="img/Bom-Jesus.jpg" alt="Image of Goa " height="400px">
+                    <p class="places-content">
+                        Goa is a state which is famous for its ancient churches and forts which holds a rich history of Portuguese rule. During the 15th and 16th century, the Portuguese marked their territory in India and established themselves at Goa. Alongside that they also
+                        marked their rule by bringing Christianity in India. Thus it also gave birth to many churches and convents in Goa. The churches and convents reflect the beautiful architecture which makes them rank in the list of UNESCO world heritage
+                        sites in India.
+                    </p>
+                </center>
+
+                <h4>What’s Special:</h4>
+                <p>Some of the famous churches to explore here are Basilica of Bom Jesus, Catholic Church of St Francis of Assisi, Se Cathedral.</p>
+
+                <h4>Food In Goa:</h4>
+                <p>Some of the famous food items in Goa are rice and fish curry, Shark Ambot Tik, Goan Pork Vindaloo, Sorpotel, Chicken Cafreal, Samarachi Kodi.</p>
+                <h4>How To Reach</h4>
+                <h5>By air:</h5>
+                <p>The nearest airport from Goa is Dabolim airport which is located at a distance of 29 kms. Regular flights connect from Mumbai, Bangalore, Delhi and many other major cities of India.
+                </p>
+                <h5>By rail:</h5>
+                <p>The main railway heads in Goa are Madgaon and Thivim. Alongside that there are other small railway stations like Vasco Da Gama, Karmali, Sanverdam Church, Pernem, Karmali and Canacona..</p>
+                <h5>By road:</h5>
+                <p>There are many state buses and privately owned buses which connect different places in the state and also nearby cities and towns.
+                </p>
+            </div>
+            <!-- </center> -->
+            <div class="footer">
+                <div class="footer-content">
+                    <div class="footer-section about">
+                        <h1 class="logo-text"><span>Culture</span>India</h1>
+                        <p class="foot_para">We are the India's Best Travel Website. Here you can Learn about India's Cultural Sites and Places and visit them. If Any Queries Contact us.</p>
+                        <div class="contact">
+                            <span><i class="fa fa-phone"></i> &nbsp; 123-456-789</span>
+                            <span><i class="fa fa-envelope"></i> &nbsp; info@visitindia.com</span>
+                        </div>
+                        <div class="socials">
+                            <a href="https://www.facebook.com" target="_blank"><i class="fa fa-facebook"></i></a> &nbsp;
+                            <a href="https://www.instagram.com" target="_blank"><i class="fa fa-instagram"></i></a> &nbsp;
+                            <a href="https://www.twitter.com" target="_blank"><i class="fa fa-twitter"></i></a> &nbsp;
+                            <a href="https://www.youtube.com" target="_blank"><i class="fa fa-youtube"></i></a> &nbsp;
+                        </div>
+                    </div>
+
+                    <div class="footer-section links">
+                        <h2>Quick Links</h2>
+                        <ul>
+                            <a href="Contact_Us.html">
+                                <li>Contact Us</li>
+                            </a>
+                            <a href="About_us.html">
+                                <li>About Us</li>
+                            </a>
+                            <a href="travel_guide.html">
+                                <li>Travel Guide</li>
+                            </a>
+                            <a href="Services.html">
+                                <li>Services</li>
+                            </a>
+                            <a href="https://www.holidify.com/pages/world-heritage-sites-in-india-1629.html">
+                                <li>Info</li>
+                            </a>
+                            <a href="https://youtu.be/IgAnj6r1O48">
+                                <li>😉 Watch Our Videos 🎞😀😃</li>
+                            </a>
+                        </ul>
+
+                    </div>
+                    <div class="footer-section contact-form">
+                        <h2>Contact Form</h2>
+                        <br>
+                        <form action="History Project.html" method="post" class="form">
+                            <input type="email" name="email" class="text-input contact-input" placeholder="Enter email.."> <br>
+                            <textarea name="message" id="" class="text-input message-input" placeholder="Your Message.."></textarea> <br>
+                            <button type="submit" class=".btn btn-big">
+                                <i class="fa fa-telegram"> &nbsp; Send</i>
+                            </button>
+                        </form>
+                    </div>
+
+                </div>
+                <div class="footer-bottom">
+                    &copy; CultureIndia.com | Designed by Krish Sarkar
+                </div>
+
+            </div>
+        </section>
+    </header>
+
+</body>
+
+</html>
