@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services | CultureIndia.com</title>
+    <style>
+        .navbar {
+            background-color: rgb(251, 255, 0);
+            border-radius: 30px;
+        }
+        
+        .navbar ul {
+            overflow: auto;
+            margin: -8px;
+            padding: 7px;
+        }
+        
+        .navbar li {
+            float: left;
+            list-style: none;
+            margin: 18px 20px;
+            border-right: 1px solid rgba(0, 0, 0, 0, 2)
+        }
+        
+        .navbar li a {
+            padding: 12px 35px;
+            text-decoration: none;
+            color: rgb(0, 0, 0);
+            font-size: 20px;
+        }
+        
+        .navbar li a:hover {
+            padding: 12px 26px;
+            text-decoration: none;
+            background-color: white;
+            color: blue;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+        
+        .search {
+            float: right;
+            color: rgb(128, 243, 12);
+            padding: 12px 75px;
+        }
+        
+        .navbar input {
+            border: 2px solid rgb(230, 22, 22);
+            border-radius: 30px;
+            padding: 3px 20px;
+        }
+        /*Services  */
+        
+        #services {
+            display: flex;
+            flex-direction: column;
+            padding: 3px 100px;
+            height: 100px;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        #services::before {
+            content: "";
+            position: absolute;
+            background-color: rgb(224, 220, 220);
+            height: 20%;
+            width: 100%;
+            z-index: -1;
+            opacity: 0.89;
+        }
+        
+        #services h1 {
+            color: rgb(255, 255, 255);
+            text-align: center;
+            font-size: 5rem;
+        }
+        
+        .slider-frame {
+            overflow: hidden;
+            height: 800px;
+            width: 1200px;
+            margin-left: 360px;
+            margin-top: 20px;
+        }
+        
+        @-webkit-keyframes slide_animation {
+            0% {
+                left: 0px;
+            }
+            10% {
+                left: 0px;
+            }
+            20% {
+                left: 1200px;
+            }
+            30% {
+                left: 1200px;
+            }
+            40% {
+                left: 2400px;
+            }
+            50% {
+                left: 2400px;
+            }
+            60% {
+                left: 4800px;
+            }
+            70% {
+                left: 4800px;
+            }
+            80% {
+                left: 2400px;
+            }
+            90% {
+                left: 2400px;
+            }
+            100% {
+                left: 1200px;
+            }
+            110% {
+                left: 1200px;
+            }
+            120% {
+                left: 0px;
+            }
+            130% {
+                left: 0px;
+            }
+            140% {
+                left: 0px;
+            }
+        }
+        
+        .slide-images {
+            justify-content: center;
+            width: 3600px;
+            height: 800px;
+            margin: 0 0 0 -2400px;
+            position: relative;
+            -webkit-animation-name: slide_animation;
+            -webkit-animation-duration: 20s;
+            -webkit-animation-iteration-count: infinite;
+            -webkit-animation-direction: alternate-reverse;
+            -webkit-animation-play-state: running;
+        }
+        
+        .img-container {
+            height: 800px;
+            width: 1200px;
+            position: relative;
+            float: left;
+        }
+        
+        .content p {
+            font-size: x-large;
+            font-weight: 1.6rem;
+            color: rgb(255, 255, 255);
+        }
+        
+        .content h3 {
+            font-size: xx-large;
+            color: rgb(248, 124, 124);
+            text-align: center;
+        }
+        
+        .content li {
+            font-size: x-large;
+            font-weight: 1.6rem;
+        }
+        
+        .services_links p {
+            font-size: x-large;
+            font-weight: 1.6rem;
+            color: rgb(255, 255, 255);
+        }
+        /* .services_links a {
+            color: blue;
+        } */
+        
+        body {
+            overflow-x: hidden;
+            background-color: lightblue;
+        }
+        
+        .travel_guide {
+            border: 2px solid blue;
+            background-color: lightblue;
+            border-radius: 12px;
+            padding: 0px;
+            margin: 8px 15px;
+        }
+        
+        .tavel-guide h1 {
+            color: blue;
+        }
+        
+        .footer .footer-content .about p {
+            color: azure;
+        }
+        
+        .footer {
+            background: black;
+            color: white;
+            height: 470px;
+            position: relative;
+        }
+        
+        .footer-content {
+            /* border: 1px solid rgb(250, 5, 5); */
+            height: 350px;
+            display: flex;
+            font-size: 18px;
+        }
+        
+        .footer .footer-content h1,
+        .footer .footer-content h2 {
+            color: white;
+        }
+        
+        .footer .footer-content .about h1 span {
+            color: #05f7ff;
+        }
+        
+        .footer-section {
+            flex: 1;
+            /* border: 1px solid white; */
+            padding: 25px;
+        }
+        
+        .footer-bottom {
+            background: rgb(58, 57, 57);
+            color: #686868;
+            height: 40px;
+            width: 100%;
+            text-align: center;
+            position: absolute;
+            bottom: 0px;
+            left: 0px;
+            padding-top: 20px;
+        }
+        
+        .footer .footer-content .about .socials a {
+            border: 1px solid grey;
+            width: 45px;
+            height: 41px;
+            padding-top: 5px;
+            margin-right: 5px;
+            text-align: center;
+            display: inline-block;
+            font-size: 1.3em;
+            border-radius: 5px;
+        }
+        
+        .footer .footer-content .links ul a {
+            display: block;
+            color: beige;
+            margin-bottom: 10px;
+            transition: all .3s;
+        }
+        
+        .footer .footer-content .links ul a:hover {
+            color: beige;
+            margin-left: 15px;
+            transition: all .3s;
+        }
+        
+        .footer .footer-content .about .contact span {
+            display: block;
+            margin-bottom: 8px;
+        }
+        
+        .footer .footer-content .contact-form .contact-input {
+            background: rgb(37, 37, 37);
+            color: #bebdbd;
+            margin-bottom: 5px;
+            line-height: 2.5rem;
+            width: 270px;
+            height: 44px;
+            padding: .9rem 1.4rem;
+            border: none;
+        }
+        
+        .footer .footer-content .contact-form .message-input {
+            background: rgb(37, 37, 37);
+            color: #bebdbd;
+            margin-bottom: 5px;
+            line-height: 2.5rem;
+            width: 310px;
+            height: 70px;
+            padding: .9rem 1.4rem;
+            border: none;
+        }
+        
+        .footer .footer-content .contact-form .btn-big {
+            background: rgb(79, 143, 238);
+            padding: .7rem 1.1rem;
+            line-height: 1.0rem;
+            float: right;
+        }
+        
+        #services_img {
+            display: flex;
+            flex-direction: column;
+            padding: 3px 200px;
+            height: 500px;
+            justify-content: left;
+            align-items: center;
+        }
+        
+        #services_img::before {
+            content: "";
+            position: absolute;
+            background: url('../img/services1.png') no-repeat center center/cover;
+            height: 100%;
+            width: 100%;
+            z-index: -1;
+            opacity: 0.89
+        }
+        
+        #services_img h1 {
+            color: rgb(255, 255, 255);
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <ul>
+            <li><a href="History Project.html"><i class="fa fa-home"></i>&nbsp; Home</a></li>
+            <li><a href="travel_guide.html"><i class="fa fa-cogs"></i>&nbsp; Travel Guide</a></li>
+            <li><a href="About_us.html"><i class="fa fa-file-text-o"></i>&nbsp; About Us</a></li>
+            <li><a href="Contact_Us.html"><i class="fa fa-phone"></i>&nbsp; Contact Us</a></li>
+            <div class="search">
+                <center><input type="text" name="search" id="search" placeholder="Search This Website"><i class="fa fa-search"></i>&nbsp;</center>
+            </div>
+        </ul>
+    </nav>
+    <section id="services">
+        <h1 class="h1-primary">Our Services</h1>
+    </section>
+    <section id="services_img">
+        <h1 class="h1-primary">Services</h1>
+    </section>
+
+    <div class="slider-frame">
+        <div class="slide-images">
+            <div class="img-container">
+                <img src="img/travel5.png">
+            </div>
+            <div class="img-container">
+                <img src="img/travel3.png">
+            </div>
+            <div class="img-container">
+                <img src="img/travel2.png">
+            </div>
+            <div class="img-container">
+                <img src="img/travel4.png">
+            </div>
+        </div>
+    </div>
+    <div class="content">
+        <p>
+            <B>CultureIndia Company </B> offers top of the line professional travel services for the inbound tours to India. For the discerning travellers to India, we offer quality hotel booking, air booking, car hire and local transportation services. Travel services offered by
+            Caper Travel Company are backed by the professional integrity of our travel managers, who are experienced and well informed. Contact us for all your travel related services in India and wait for our travel managers to respond with great offers.
+        </p>
+        <h3> Tours High-on-quality, pleasure and safety:</h3>
+        <p>To make your India holidays a 'celebration', we offer a variety of tours touching various tour themes of India. We have tours which are prepared with great enthusiasm and extra care and all are tried and tested. Offering extensive travel information
+            on the incredible destinations of India, we always endeavor to make your holidays a memorable and pleasurable experience. India is a land for all seasons and we are pleased to serve you with all kinds of tours.
+        </p>
+        <p>All tours are of high quality and have enough space to be flexible if required. We make sure that you experience real authentic " local " taste of fairs & festivals or some local wedding or functions during the tour. Our tours can be classified
+            into:
+        </p>
+        <ul>
+            <li>
+                <a href="http://www.capertravelindia.com/india-tours/cultural-tour-packages.html"> Cultural Tours</a>
+            </li>
+            <li>
+                <a href="http://www.capertravelindia.com/india-tours/wildlife-tour-packages.html">Wildlife Tours</a>
+            </li>
+            <li>
+                <a href="http://www.capertravelindia.com/india-tours/tribal-tour-packages.html">Tribal Tours</a> </li>
+            <li>
+                <a href="http://www.capertravelindia.com/india-tours/adventure-tour-packages.html">Adventure Tours</a>
+            </li>
+            <li>
+                <a href="http://www.capertravelindia.com/adventure-travel/jeep-tours.html">Jeep Safaris</a> </li>
+            <li>
+                <a href="http://www.capertravelindia.com/india-beaches/beach-holidays.html">Beach Tours</a> </li>
+            <li>
+                <a href="http://www.capertravelindia.com/india-tours/camel-safari-tour.html">Camel Tours</a> </li>
+            <li>
+                <a href="http://www.capertravelindia.com/india-tours/ayurveda-yoga-tour-packages.html">Ayurveda and
+                    Massage Tour</a></li>
+            <li>
+                <a href="http://www.capertravelindia.com/india-tours/spiritual-tour-packages.html">Religious Tours</a>
+            </li>
+        </ul>
+        <h3>Customized Tour / Freedom of choice </h3>
+        <p>Our Customized Tour Department will offer you complete freedom of choice, WE will tailor out a tour that will reflect your individual taste, budget and time. We will suggest you hundreds of places to choose from like exotic Beaches, snow clad
+            mountins and hills, world famous back water cruises, golden desserts, ancient temples and various other places known for culture, fairs & festivals.</p>
+        <h3>Visas & Travel Insurance</h3>
+        <p>
+            Our specialized staff can also assist you in getting requisite Visa and Travel insurance at a very competitive premium.
+        </p>
+        <h3>Rail Tours</h3>
+        <p> We can also book Luxurious Rail Tour like "Palace on Wheels" & "Oriental Palace" for you and we can customize your tour by other available fast and comfortable train.</p>
+
+    </div>
+    <div class="services_links">
+        <h3><a href="http://www.capertravelindia.com/enquiry/hotel-booking.html">Hotel Booking</a></h3>
+        <p>
+            If you do not want to opt for tours but need hotel accommodation anywhere in India, we will be extremely happy to book them for you at a very specialnegotiated contracted rate. In India our hotel ranges from Deluxe International chain hotels to the refurbished
+            palaces of Maharajas. We also have Forts and Havelis, now converted into Heritage Hotels.
+        </p>
+        <h3><a href="http://www.capertravelindia.com/enquiry/air-bookings.html">Air Booking</a> </h3>
+        <p>
+            International & Domestic Tickets of all the international and domestic airlines can be purchased from us at a very competitive and reasonable price. All the best deals available with us are passed on to our esteemed clients.
+        </p>
+        <h3>
+            <a href="http://www.capertravelindia.com/enquiry/car-rentals.html">Car Hire and Land Transportation</a>
+        </h3>
+        <p>
+            Travelling in India might be a fantastic experience like never before. The roads, the scenes, the culture, the people, the attitude, the bottlenecks, and the various modes of transport, all present a unique picture of India as India itself.
+            <br> Amongst the multifaceted features of Indian transport, trust Caper to deliver the best. For your comfort, Caper has its own fleet of Indian Ambassador & Luxury Cars and air-conditioned Luxury Coaches, fitted with panoramic windows, seat
+            belts, luxurious push back seats, plush interiors, audio systems, etc, all to make your drive ever so enjoyable.
+            <br> We at Caper adhere to the stringent of safety norms and abide by the safe drivers routines like driving hours, speed restrictions and road regulations. Further for your comfort, we have frequent refreshment stops en route and maintain
+            a strict no smoking regulation on our coaches. The ultimate bottomline is when you are with caper, be assured that you are in safe hands, and just sit back relaxed and enjoy the driving experience to and from the lovely Indian destinations,
+            while caper's modern and luxurious transport fleets take you through the rough and tough as well as smooth areas.
+        </p>
+    </div>
+    <div class="footer">
+        <div class="footer-content">
+            <div class="footer-section about">
+                <h1 class="logo-text"><span>Culture</span>India</h1>
+                <p class="foot_para">We are the India's Best Travel Website. Here you can Learn about India's Cultural Sites and Places and visit them. If Any Queries Contact us.</p>
+                <div class="contact">
+                    <span><i class="fa fa-phone"></i> &nbsp; 123-456-789</span>
+                    <span><i class="fa fa-envelope"></i> &nbsp; info@visitindia.com</span>
+                </div>
+                <div class="socials">
+                    <a href="https://www.facebook.com" target="_blank"><i class="fa fa-facebook"></i></a> &nbsp;
+                    <a href="https://www.instagram.com" target="_blank"><i class="fa fa-instagram"></i></a> &nbsp;
+                    <a href="https://www.twitter.com" target="_blank"><i class="fa fa-twitter"></i></a> &nbsp;
+                    <a href="https://www.youtube.com" target="_blank"><i class="fa fa-youtube"></i></a> &nbsp;
+                </div>
+            </div>
+
+            <div class="footer-section links">
+                <h2>Quick Links</h2>
+                <ul>
+                    <a href="Contact_Us.html">
+                        <li>Contact Us</li>
+                    </a>
+                    <a href="About_us.html">
+                        <li>About Us</li>
+                    </a>
+                    <a href="History Project.html">
+                        <li>Home</li>
+                    </a>
+                    <a href="travel_guide.html">
+                        <li>Travel Guide</li>
+                    </a>
+                    <a href="https://www.holidify.com/pages/world-heritage-sites-in-india-1629.html">
+                        <li>Info</li>
+                    </a>
+                    <a href="https://youtu.be/IgAnj6r1O48">
+                        <li>😉 Watch Our Videos 🎞😀😃</li>
+                    </a>
+                </ul>
+
+            </div>
+            <div class="footer-section contact-form">
+                <h2>Contact Form</h2>
+                <br>
+                <form action="History Project.html" method="post" class="form">
+                    <input type="email" name="email" class="text-input contact-input" placeholder="Enter email..">
+                    <br>
+                    <textarea name="message" id="" class="text-input message-input" placeholder="Your Message.."></textarea> <br>
+                    <button type="submit" class=".btn btn-big">
+                        <i class="fa fa-telegram"> &nbsp; Send</i>
+                    </button>
+                </form>
+            </div>
+
+        </div>
+        <div class="footer-bottom">
+            &copy; CultureIndia.com | Designed by Krish Sarkar
+        </div>
+
+    </div>
+</body>
+
+</html>
+
+</html>

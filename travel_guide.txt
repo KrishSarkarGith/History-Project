@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Guide | CultureIndia.com</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+    .navbar ul {
+        overflow: auto;
+        margin: -8px;
+        padding: 7px;
+    }
+    
+    .navbar li {
+        float: left;
+        list-style: none;
+        margin: 14px 2px;
+        border-right: 1px solid rgba(0, 0, 0, 0, 2)
+    }
+    
+    .navbar li a {
+        padding: 12px 26px;
+        text-decoration: none;
+        color: white;
+        font-size: 20px;
+    }
+    
+    .search {
+        float: right;
+        color: rgb(128, 243, 12);
+        padding: 12px 75px;
+    }
+    
+    .navbar input {
+        border: 2px solid rgb(230, 22, 22);
+        border-radius: 30px;
+        padding: 3px 20px;
+    }
+    
+    .navbar {
+        background-color: rgb(0, 89, 255);
+        padding: 3px 20px;
+        /* position: fixed; */
+    }
+    
+    .navbar li a:hover {
+        padding: 11px 54px;
+        text-decoration: none;
+        background-color: rgb(142, 206, 245);
+        color: rgb(255, 255, 255);
+        /* border-radius: 20px; */
+    }
+    
+    p {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-size: larger;
+        color: black;
+    }
+    
+    #travel {
+        display: flex;
+        flex-direction: column;
+        padding: 3px 200px;
+        height: 550px;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    #travel::before {
+        content: "";
+        position: absolute;
+        background: url('../img/travel.png') no-repeat center center/cover;
+        height: 100%;
+        width: 100%;
+        z-index: -1;
+        opacity: 0.89;
+        border-radius: 0px 0px 50% 50%;
+    }
+    
+    #travel h1 {
+        color: rgb(255, 255, 255);
+        text-align: center;
+        font-size: 3rem;
+        text-shadow: blue;
+        font-feature-settings: "aalt";
+    }
+    
+    #travel p {
+        color: rgb(255, 255, 255);
+        text-align: center;
+        font-size: 2.5rem;
+        text-shadow: blue;
+        font-feature-settings: "abvm";
+        font-weight: 400;
+    }
+    /* #about_us h1 {
+            color: black;
+        } */
+    
+    .travel_guide {
+        border: 2px solid blue;
+        background-color: lightblue;
+        border-radius: 12px;
+        padding: 0px;
+        margin: 8px 15px;
+    }
+    
+    .tavel-guide h1 {
+        color: blue;
+    }
+    
+    .footer .footer-content .about p {
+        color: azure;
+    }
+    
+    .footer {
+        background: black;
+        color: white;
+        height: 470px;
+        position: relative;
+    }
+    
+    .footer-content {
+        /* border: 1px solid rgb(250, 5, 5); */
+        height: 350px;
+        display: flex;
+        font-size: 18px;
+    }
+    
+    .footer .footer-content h1,
+    .footer .footer-content h2 {
+        color: white;
+    }
+    
+    .footer .footer-content .about h1 span {
+        color: #05f7ff;
+    }
+    
+    .footer-section {
+        flex: 1;
+        /* border: 1px solid white; */
+        padding: 25px;
+    }
+    
+    .footer-bottom {
+        background: rgb(58, 57, 57);
+        color: #686868;
+        height: 40px;
+        width: 100%;
+        text-align: center;
+        position: absolute;
+        bottom: 0px;
+        left: 0px;
+        padding-top: 20px;
+    }
+    
+    .footer .footer-content .about .socials a {
+        border: 1px solid grey;
+        width: 45px;
+        height: 41px;
+        padding-top: 5px;
+        margin-right: 5px;
+        text-align: center;
+        display: inline-block;
+        font-size: 1.3em;
+        border-radius: 5px;
+    }
+    
+    .footer .footer-content .links ul a {
+        display: block;
+        color: beige;
+        margin-bottom: 10px;
+        transition: all .3s;
+    }
+    
+    .footer .footer-content .links ul a:hover {
+        color: beige;
+        margin-left: 15px;
+        transition: all .3s;
+    }
+    
+    .footer .footer-content .about .contact span {
+        display: block;
+        margin-bottom: 8px;
+    }
+    
+    .footer .footer-content .contact-form .contact-input {
+        background: rgb(37, 37, 37);
+        color: #bebdbd;
+        margin-bottom: 5px;
+        line-height: 2.5rem;
+        width: 270px;
+        height: 44px;
+        padding: .9rem 1.4rem;
+        border: none;
+    }
+    
+    .footer .footer-content .contact-form .message-input {
+        background: rgb(37, 37, 37);
+        color: #bebdbd;
+        margin-bottom: 5px;
+        line-height: 2.5rem;
+        width: 310px;
+        height: 70px;
+        padding: .9rem 1.4rem;
+        border: none;
+    }
+    
+    .footer .footer-content .contact-form .btn-big {
+        background: rgb(79, 143, 238);
+        padding: .7rem 1.1rem;
+        line-height: 1.0rem;
+        float: right;
+    }
+</style>
+
+<body>
+    <nav class="navbar">
+        <ul>
+            <li><a href="History Project.html"><i class="fa fa-home"></i>&nbsp; Home</a></li>
+            <li><a href="Services.html"><i class="fa fa-cogs"></i>&nbsp; Services</a></li>
+            <li><a href="About_us.html"><i class="fa fa-cogs"></i>&nbsp; About Us</a></li>
+            <li><a href="Contact_Us.html"><i class="fa fa-phone"></i>&nbsp; Contact Us</a></li>
+            <div class="search">
+                <center><input type="text" name="search" id="search" placeholder="Search This Website"><i class="fa fa-search"></i>&nbsp;</center>
+            </div>
+        </ul>
+    </nav>
+    <section id="travel">
+        <h1 class="h1-primary">Travel Guide</h1>
+        <p>We are here to guide you all the way!</p>
+    </section>
+    <div>
+        <h2>Travel in India</h2>
+        <p>According to Keith Bellows, the famous travel writer, "There are some parts of the world that, once visited, get into your heart and want to go. For me, India is such a place...." <br> <br> India is indeed a country of vivid colors, seasons, culture
+            and romance that grows gradually on you. The name India is derived from the Sanskrit word Indus. India nestles in the lap of the ever evolving grand Himalayan ranges. The country is bordered by three large water bodies, Arabian Sea on the
+            west, Bay of Bengal on the east and Indian Ocean at the southernmost tip. India is bordered by Pakistan, Nepal and China, Bangladesh and covers an area of 3.3 million sq km. The coastline stretches to 7600 km. India is home to historic temples,
+            churches, caves, palm-fringed beaches, lakes, deserts and magnificent monuments built by Britishers, Portuguese and Mughals. This incredible patch of land has 26 world heritage sites. <br> <br> India is a kaleidoscope where you will see people
+            dressed in unbelievable combination of bright and captivating colors. <br> <br> India has something to cater to every discerning traveler. The sheer diversity of natural landscapes, cultures, historical monuments, religious places makes India
+            a unique holiday destination in the world.
+        </p>
+    </div>
+    <div class="travel_guide">
+        <div class="first">
+            <h1>India Tourism</h1>
+            <ul>
+                <li> Andaman Nicobar Tourism</li>
+                <li>Andhra Pradesh Tourism</li>
+                <li>Arunachal Pradesh Tourism</li>
+                <li>Assam Tourism Bihar Tourism</li>
+                <li>Chattisgarh Tourism</li>
+                <li>Chandigarh Tourism</li>
+                <li>Dadra And Nagar Haveli Tourism</li>
+                <li> Daman & Diu Tourism</li>
+                <li>Delhi Tourism</li>
+                <li>Goa Tourism</li>
+                <li> Gujarat Tourism</li>
+                <li>Haryana Tourism</li>
+                <li> Himachal Pradesh Tourism</li>
+                <li>Many more</li>
+            </ul>
+        </div>
+        <div class="second">
+            <h1>India Hotels</h1>
+            <ul>
+                <li>Budget Hotels In Shirdi</li>
+                <li>Hotel Bookings</li>
+                <li>Allahabad Hotels</li>
+                <li>Hotels In Bhopal</li>
+                <li>Chennai Hotels</li>
+                <li> Hotels In Dehradun</li>
+                <li>Delhi Hotels</li>
+                <li>Goa Hotel Booking</li>
+                <li> Haridwar Hotels</li>
+                <li> Hotels In Jaipur</li>
+                <li>Jamshedpur Hotels</li>
+                <li>Hotels In Kasauli</li>
+                <li>Hotels In Lucknow</li>
+                <li>Hotels In Ludhiana</li>
+                <li>Many more</li>
+            </ul>
+        </div>
+    </div>
+    <div class="travel_guide">
+        <div class="third">
+            <h1>International Flights</h1>
+            <ul>
+                <li>International Flights To Austria</li>
+                <li>International Flights To Australia</li>
+                <li>International Flights To Algeria</li>
+                <li> International Flights To American Samoa</li>
+                <li>International Flights To Andorra</li>
+                <li>International Flights To Angola</li>
+                <li>International Flights To Anguilla</li>
+                <li>International Flights To Antigua And Barbuda</li>
+                <li>International Flights To Argentina</li>
+                <li>International Flights To Armenia</li>
+                <li>International Flights To Aruba</li>
+                <li>International Flights To Azerbaijan</li>
+                <li>International Flights To Albania</li>
+                <li> International Flights To Afghanistan</li>
+                <li>Many more</li>
+            </ul>
+        </div>
+        <div class="fourth">
+            <h1>Weekend Getaways In India</h1>
+            <ul>
+                <li>Agra Weekend Getaways</li>
+                <li>Ahmedabad Weekend Getaways</li>
+                <li>Ajmer Weekend Getaways</li>
+                <li>Alchi Weekend Getaways</li>
+                <li>Alleppey Weekend Getaways</li>
+                <li>Almora Weekend Getaways</li>
+                <li>Amritsar Weekend Getaways</li>
+                <li>Andaman Weekend Getaways</li>
+                <li>Andhra Pradesh Weekend Getaways</li>
+                <li>Annapurna Weekend Getaways</li>
+                <li>Arunachal Pradesh Weekend Getaways</li>
+                <li>Assam Weekend Getaways</li>
+                <li>Auli Weekend Getaways</li>
+                <li>Aurangabad Weekend Getaways</li>
+                <li>Many More</li>
+            </ul>
+        </div>
+    </div>
+    <div class="travel_guide">
+        <div class="fifth">
+            <h1>International Holidays</h1>
+            <ul>
+                <li> Aberdare Holidays</li>
+                <li>Abu Dhabi Holidays</li>
+                <li>Daegu Holidays</li>
+                <li> Daejeon Holidays</li>
+                <li> Dambulla Holidays</li>
+                <li>Hong Kong Holidays</li>
+                <li>Hua Hin Cha Am Holidays</li>
+                <li> Hungary Holidays</li>
+                <li>Hurghada Holidays</li>
+                <li> Macau Holidays</li>
+                <li> Madrid Holidays </li>
+                <li>Mahe Holidays</li>
+                <li>Maine Holidays</li>
+                <li>Malacca Holidays</li>
+                <li>Many more</li>
+            </ul>
+        </div>
+        <div class="sixth">
+            <h1>Domestic Holidays</h1>
+            <ul>
+                <li>Agra Holidays</li>
+                <li>Ahmedabad Holidays</li>
+                <li>Ajmer Holidays</li>
+                <li>Alchi Holidays</li>
+                <li>Alleppey Holidays</li>
+                <li>Almora Holidays</li>
+                <li>Badrinath Holidays</li>
+                <li>Bandhavgarh National Park Holidays</li>
+                <li>Bandipur Holidays</li>
+                <li>Bangalore Holidays</li>
+                <li>Baratang Holidays</li>
+                <li>Bengaluru Holidays</li>
+                <li>Haridwar Holidays</li>
+                <li>Haryana Holidays</li>
+                <li>Many More</li>
+            </ul>
+        </div>
+        <div class="travel_guide">
+            <div class="seventh">
+                <h1>Domestic Flights Booking</h1>
+                <ul>
+                    <li>Agartala To Agatti Island</li>
+                    <li>Agartala To Agra</li>
+                    <li>Agartala To Ahmedabad</li>
+                    <li>Agartala To Aizawl</li>
+                    <li>Agartala To Allahabad</li>
+                    <li>Agartala To Amritsar</li>
+                    <li>Agartala To Aurangabad</li>
+                    <li>Agartala To Bagdogra</li>
+                    <li>Agartala To Bangalore</li>
+                    <li> Agartala To Belgaum</li>
+                    <li>Agartala To Bellary</li>
+                    <li>Agartala To Bhavnagar</li>
+                    <li> Agartala To Bhopal</li>
+                    <li>Agartala To Bhubaneshwar</li>
+                    <li>Many more</li>
+                </ul>
+            </div>
+            <div class="eighth">
+                <h1>Top Flights From India</h1>
+                <ul>
+                    <li>Agartala To Abu Dhabi</li>
+                    <li>Agartala To Addis Ababa</li>
+                    <li> Agartala To Altenrhein</li>
+                    <li>Bagdogra To Abha</li>
+                    <li>Bagdogra To Abilene</li>
+                    <li>Bagdogra To Abu Dhabi</li>
+                    <li>Dehradun To Abu Dhabi</li>
+                    <li>Dehradun To Alexandroupolis</li>
+                    <li>Dehradun To American River</li>
+                    <li>Dehradun To Auckland</li>
+                    <li>Jabalpur To Abu Dhabi</li>
+                    <li>Jabalpur To Bahrain</li>
+                    <li>Jabalpur To Bangkok</li>
+                    <li>Jabalpur To Brasilia</li>
+                    <li> Raipur To Aalborg</li>
+                    <li>Raipur To Abha</li>
+                    <li>Raipur To Abu Dhabi</li>
+                    <li> Raipur To Alexandra</li>
+                    <li>Raipur To Almaty</li>
+                    <li> Raipur To Ambilobe</li>
+                    <li>Raipur To Amsterdam</li>
+                    <li>Raipur To Atambua</li>
+                    <li>Raipur To Atlanta</li>
+                    <li>Raipur To Auckland</li>
+                    <li>Raipur To Balimo</li>
+                    <li> Raipur To Bandung</li>
+                    <li> Raipur To Bahrain </li>
+                    <li>Many More</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="footer-content">
+                <div class="footer-section about">
+                    <h1 class="logo-text"><span>Culture</span>India</h1>
+                    <p class="foot_para">We are the India's Best Travel Website. Here you can Learn about India's Cultural Sites and Places and visit them. If Any Queries Contact us.</p>
+                    <div class="contact">
+                        <span><i class="fa fa-phone"></i> &nbsp; 123-456-789</span>
+                        <span><i class="fa fa-envelope"></i> &nbsp; info@visitindia.com</span>
+                    </div>
+                    <div class="socials">
+                        <a href="https://www.facebook.com" target="_blank"><i class="fa fa-facebook"></i></a> &nbsp;
+                        <a href="https://www.instagram.com" target="_blank"><i class="fa fa-instagram"></i></a> &nbsp;
+                        <a href="https://www.twitter.com" target="_blank"><i class="fa fa-twitter"></i></a> &nbsp;
+                        <a href="https://www.youtube.com" target="_blank"><i class="fa fa-youtube"></i></a> &nbsp;
+                    </div>
+                </div>
+
+                <div class="footer-section links">
+                    <h2>Quick Links</h2>
+                    <ul>
+                        <a href="Contact_Us.html">
+                            <li>Contact Us</li>
+                        </a>
+                        <a href="About_us.html">
+                            <li>About Us</li>
+                        </a>
+                        <a href="History Project.html">
+                            <li>Home</li>
+                        </a>
+                        <a href="Services.html">
+                            <li>Services</li>
+                        </a>
+                        <a href="https://www.holidify.com/pages/world-heritage-sites-in-india-1629.html">
+                            <li>Info</li>
+                        </a>
+                        <a href="https://youtu.be/IgAnj6r1O48">
+                            <li>😉 Watch Our Videos 🎞😀😃</li>
+                        </a>
+                    </ul>
+
+                </div>
+                <div class="footer-section contact-form">
+                    <h2>Contact Form</h2>
+                    <br>
+                    <form action="History Project.html" method="post" class="form">
+                        <input type="email" name="email" class="text-input contact-input" placeholder="Enter email..">
+                        <br>
+                        <textarea name="message" id="" class="text-input message-input" placeholder="Your Message.."></textarea> <br>
+                        <button type="submit" class=".btn btn-big">
+                            <i class="fa fa-telegram"> &nbsp; Send</i>
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+            <div class="footer-bottom">
+                &copy; CultureIndia.com | Designed by Krish Sarkar
+            </div>
+
+        </div>
+        </section>
+</body>
+
+</html>
