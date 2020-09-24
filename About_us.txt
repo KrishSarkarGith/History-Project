@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | CultureIndia.com</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .navbar ul {
+            overflow: auto;
+            margin: -8px;
+            padding: 7px;
+        }
+        
+        .navbar li {
+            float: left;
+            list-style: none;
+            margin: 14px 2px;
+            border-right: 1px solid rgba(0, 0, 0, 0, 2)
+        }
+        
+        .navbar li a {
+            padding: 12px 26px;
+            text-decoration: none;
+            color: white;
+            font-size: 20px;
+        }
+        
+        .search {
+            float: right;
+            color: rgb(128, 243, 12);
+            padding: 12px 75px;
+        }
+        
+        .navbar input {
+            border: 2px solid rgb(230, 22, 22);
+            border-radius: 30px;
+            padding: 3px 20px;
+        }
+        
+        .navbar {
+            background-color: rgb(51, 46, 46);
+            padding: 3px 20px;
+            /* position: fixed; */
+        }
+        
+        .navbar li a:hover {
+            padding: 11px 54px;
+            text-decoration: none;
+            background-color: rgb(247, 237, 237);
+            color: black;
+            /* border-radius: 20px; */
+        }
+        
+        p {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-size: larger;
+            color: black;
+        }
+        
+        #about {
+            display: flex;
+            flex-direction: column;
+            padding: 3px 200px;
+            height: 550px;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        #about::before {
+            content: "";
+            position: fixed;
+            background: url('../img/aboutus.jpeg') no-repeat center center/cover;
+            height: 100%;
+            width: 100%;
+            z-index: -1;
+            opacity: 0.89
+        }
+        
+        #about h1 {
+            color: rgb(10, 9, 9);
+            text-align: center;
+            font-size: 2rem;
+        }
+        
+        #about p {
+            color: rgb(23, 24, 28);
+            text-align: center;
+            font-size: 1.7rem;
+        }
+        
+        #about_us h1 {
+            color: black;
+        }
+    </style>
+
+</head>
+
+<body>
+    <nav class="navbar">
+        <ul>
+            <li><a href="History Project.html"><i class="fa fa-home"></i>&nbsp; Home</a></li>
+            <li><a href="Services.html"><i class="fa fa-cogs"></i>&nbsp; Services</a></li>
+            <li><a href="travel_guide.html"><i class="fa fa-cogs"></i>&nbsp; Travel Guide</a></li>
+            <li><a href="Contact_Us.html"><i class="fa fa-phone"></i>&nbsp; Contact Us</a></li>
+            <div class="search">
+                <center><input type="text" name="search" id="search" placeholder="Search This Website"><i class="fa fa-search"></i>&nbsp;</center>
+            </div>
+        </ul>
+    </nav>
+    <section id="about">
+        <h1 class="h1-primary">About Us</h1>
+        <p>Founded in 2011, CultureIndia is India’s leading online holiday marketplace bringing both the travelers, and trusted & expert travel agents on a common platform. With the recent Series C funding of $12 Million from Krish Sarkar and Bobby Sarkar
+            backed Fundamentum in early 2018, it is on its way of encompassing all the components of holiday eco-system through its highly innovative and technology-focused product. Besides, having already raised close to a cumulative funding of $20 Million
+            from SAIF Partners, Bessemer Venture Partners and RB Investments put together, the company has already achieved operating profitability, and on track to become EBITDA profitable by next year. </p>
+    </section>
+    <div id="about_us">
+        <center>
+            <h1>
+                <B><I>Who are we?</I></B>
+            </h1>
+        </center>
+        <p>
+            <B>Obsessed with the idea of empowering the travelers with best vacation deals, CultureIndia is a product
+                of Holiday Culture India Pvt. Ltd. We are an online marketplace that connects a traveler to multiple
+                local travel agents. With the help
+                of these 650+ local travel experts CultureIndia has been able to cater to the needs of over 10 Lac
+                travelers on international tour holidays as well as domestic India tours. <br> <br> To provide the best
+                tour and travel experiences, our packages
+                are customizable at the time of booking. From a backpacker’s needs to a honeymooner’s demands,
+                CultureIndia crafts the best vacation deals for holiday destinations in India as well as abroad.
+                Amongst our best selling packages, our Mauritius
+                honeymoon package guarantees personalized memories for newlyweds and our Mauritius holiday package
+                offers an exceptional family getaway at the most reasonable costs. From the other international travel
+                deals that we offer, Sri Lanka Tour packages,
+                Maldives packages and Singapore packages sell like hot cakes. For tourist destinations in India, our
+                Kerala Tour Packages are as enriching as the land of gods itself. Leh-Ladakh tour packages and Kashmir
+                holiday packages at CultureIndia
+                know no limits of customization, as we have got an extremely experienced family of agents residing in
+                the Himalayas. Book your holiday with us and we show you the world like you have never seen it before.
+                From adventures in Ladakh to a crazy
+                vacation in Amsterdam to romancing in the backwaters of Munnar and Venice, CultureIndia is your ideal
+                travel buddy. <br> <br> At CultureIndia, we know that a holiday, ideally, should not be all about
+                planning, finding and making bookings.
+                In fact, it should be some time away from the daily hustle bustle that keeps you busy. If planning your
+                entire tour sounds like a burden, we are the strongest shoulders to cry on. We don’t just provide
+                well-planned and even better-executed
+                itineraries, but also offer you a chance to customize it as per your whims and fancies. A solo tour on
+                your mind? We got you covered! Planning to whisk your life partner to an uber-romantic destination? We
+                have a huge list, and some honeymoon
+                freebies! Taking along the family for a much needed summer break? Our list is endless, and you can also
+                find places where kids can enjoy separate activities from adults. And what about a holiday with friends?
+                For your gang of amigos, we have
+                handpicked the most happening places with activities that are sure to titillate all your senses. <br>
+                <br> Spend some time in the verdant environs of Bali, with the swaying rice fields giving the stunning
+                sunrise a run for its money. Or how
+                about enjoying a couple of days in the hyped-up atmosphere of Phuket, with sun-kissed beaches and an
+                active nightlife to keep you company? Chances are you will also love to explore the ancient beauty and
+                splendid architecture of various European
+                cities, such as Athens, Rome, Paris; and the list could go on. We have added plenty more international
+                destinations to our kitty, so that you can have your pick of amazing holidays, and travel stories to
+                tell.
+                <br> <br> If you have something a little close to home in mind, then why not spend some time exploring
+                the luscious other-worldly beauty of the Andamans, where white-sand beaches, rocky outcrops and a
+                colonial lifestyle await you! In case
+                you are not a beach baby, the rolling hills of Himachal and Uttarakhand can appease your wanderlust,
+                where a more simplistic lifestyle and friendly locals ensure a relaxing holiday. In fact, India is a
+                great place to start quenching your thirst
+                for travel. Whether you are looking for beaches, mountains, rivers, lakes, forests or man-made wonders
+                to explore, India is sure to have the answer for you. And who else can cater to your travel
+                requirements, within India as well as outside,
+                than us! <br> <br> Be it a budget tour that you are looking for, or a super luxurious one,
+                CultureIndia is forever ready to plan your holiday for you, whatever the destination might be.</B>
+        </p>
+
+    </div>
+</body>
+
+</html>
